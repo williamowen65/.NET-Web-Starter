@@ -1,26 +1,10 @@
 ﻿
-
 /*
-
-I once created a dummy project while messing 
-around with writing Google Chrome Extensions
-I came up with a simple script that grabbed elements from the screen
-and animated with them.
-
-I don't want you to need to have the chrome ext to experience it though.
-So this is an example.
-
-The Vortex is simply grabing EVERY element and 
-iterates over them and performs a mod check
-
-The mod number can be however many various of speeds you need
-For purpose of this, I choose 4-5 different speeds.
-
+William Owen - 1/13/2025
+Animation logic for vortex
 */
 
-
 console.log("Google Vortex Script loaded")
-
 
 document.addEventListener("DOMContentLoaded", googleVortex)
 
@@ -33,23 +17,7 @@ function googleVortex() {
     const screenWidth = (window.innerWidth / 2);
     const screenHeight = (window.innerHeight / 2)
 
-    //// add a dot to center point
-    //const centerDot = document.createElement('div');
-    //centerDot.style.position = 'absolute';
-    //centerDot.style.width = '10px';
-    //centerDot.style.height = '10px';
-    //centerDot.style.backgroundColor = 'red';
-    //centerDot.style.borderRadius = '50%';
-    //centerDot.style.left = `${screenWidth - 5}px`;
-    //centerDot.style.top = `${screenHeight - 5}px`;
-    //centerDot.classList.add('no-vortex')
-    //document.body.appendChild(centerDot);
-
-
     allElem.forEach((el, i) => {
-
-        // Set transform-origin to the center of the screen
-        //el.style.transformOrigin = `${screenWidth}px ${screenHeight}px`;
 
         // setup animation
         const elemAnimations = [
@@ -85,8 +53,6 @@ function googleVortex() {
             }
             case 4: {
                 elemTiming.duration = 30000; // Slowest animation
-           
-
                 break;
             }
             default:
@@ -95,25 +61,21 @@ function googleVortex() {
 
         switch (mod % 2) {
             case 0: {
+                // rotate right
                 elemAnimations.push({ transform: "rotate(360deg) translateX(0)" })
                 break;
-                // rotate right
             }
             case 1: {
                 // rotate left
                 elemAnimations.push({ transform: "rotate(-360deg) translateX(0)" })
                 break;
-
             }
-
         }
 
-        console.log({ elemAnimations, elemTiming })
+        //console.log({ elemAnimations, elemTiming })
 
         // Apply animation
-
         const animation = el.animate(elemAnimations, elemTiming)
-
 
         // Check when the last element finishes animating
         if (i === allElem.length - 1) {
