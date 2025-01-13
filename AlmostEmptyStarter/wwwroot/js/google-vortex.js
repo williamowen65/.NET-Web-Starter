@@ -128,9 +128,3 @@ function googleVortex() {
     })
 
 }
-
-
-
-
-
-// 
