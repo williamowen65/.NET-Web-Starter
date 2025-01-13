@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>Make this dynamic per page</title>*@
+    @*<title>@ViewBag.Title</title>*@
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/js/site.js">
+    <link rel="shortcut icon" href="~/favicon.ico" />
+    
+     @* conditional header elems per page *@
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/google.css">
+
+</head>
+<body>
+    <header id="website-header">
+        <h1>Random Website</h1>
+        @Html.Partial("_NavBar")
+    </header>
+
+    @*Replace with child view content *@
+    @RenderBody()
+
+    @* Include the common navigation bar
+
+    @Html.Partial("_Footer")
+    *@
+   
+
+
+</body>
+</html>

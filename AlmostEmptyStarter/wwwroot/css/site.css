@@ -1,0 +1,15 @@
+body {
+/*    background: blue;*/
+
+}
+
+#website-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: aquamarine;
+    align-items: center;
+}
+#website-header nav a {
+    margin-right: 20px;
+}
